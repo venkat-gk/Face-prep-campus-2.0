@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>College Advertisement</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            animation: fadeIn 2s;
+        }
+
+        img.logo {
+            width: 100px;
+        }
+
+        img.college {
+            width: 80%;
+            border-radius: 15px;
+            margin-top: 20px;
+            animation: zoomIn 2s;
+        }
+
+        h1 {
+            animation: slideDown 1.5s;
+        }
+
+        .courses {
+            margin: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            animation: fadeIn 3s;
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+
+        .success {
+            color: lightgreen;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: orange;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        button:hover {
+            background: green;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- College Logo -->
+        <img src="logo.jpg" class="logo" alt="College Logo">
+        <h1>Welcome to Kamaraj College Face Prep </h1>
+        <p>100% Placement Based on Talent</p>
+    </header>
+
+    <!-- College Image -->
+    <img src="download.jpg" class="college" alt="College Image">
+
+    <div class="courses">
+        <h2>Courses Offered</h2>
+        <p>BCA (Java, Python, HTML, Data Structures)</p>
+        <p>BBA (Digital Marketing, Business Skills)</p>
+
+        <h3>Programming Courses</h3>
+        <p>✔ Java</p>
+        <p>✔ Python</p>
+        <p>✔ HTML</p>
+        <p>✔ Python Data Structures</p>
+        <p>✔ Java Data Structures</p>
+    </div>
+
+    <div class="courses">
+        <h2 class="warning">If you FAIL or have ARREARS → NO JOB ❌</h2>
+        <h2 class="success">But if you have SKILLS → JOB GUARANTEED ✔</h2>
+    </div>
+
+    <h2>🎯 100% Placement Based on Talent</h2>
+
+    <!-- Register Button -->
+    <button onclick="register()">Click Here to Register</button>
+
+    <script>
+        function register() {
+            alert("Registration Page Coming Soon!");
+        }
+    </script>
+
+</body>
+
+</html>
