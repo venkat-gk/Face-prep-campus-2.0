@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>College Advertisement</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamaraj College Face Prep</title>
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background: linear-gradient(to right, #1e3c72, #2a5298);
             color: white;
             text-align: center;
+        }
+
+        /* WATERMARK */
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            opacity: 0.3;
+            font-size: 16px;
         }
 
         header {
@@ -17,38 +34,80 @@
             animation: fadeIn 2s;
         }
 
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
         img.logo {
-            width: 100px;
+            width: 80px;
         }
 
         img.college {
-            width: 80%;
+            width: 90%;
+            max-width: 900px;
             border-radius: 15px;
-            margin-top: 20px;
-            animation: zoomIn 2s;
+            margin: 20px 0;
+            box-shadow: 0 0 20px black;
         }
 
-        h1 {
-            animation: slideDown 1.5s;
-        }
-
-        .courses {
-            margin: 30px;
+        /* GRID SECTION */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             padding: 20px;
+        }
+
+        .card {
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            animation: fadeIn 3s;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px black;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .negative {
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        .positive {
+            background: rgba(0, 255, 0, 0.2);
         }
 
         .warning {
             color: red;
-            font-weight: bold;
-            animation: blink 1s infinite;
         }
 
         .success {
             color: lightgreen;
-            font-weight: bold;
+        }
+
+        /* FACE PREP SECTION */
+        .faceprep {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .faceprep h2 {
+            margin-bottom: 15px;
+        }
+
+        .faceprep ul {
+            list-style: none;
+        }
+
+        .faceprep li {
+            margin: 8px 0;
         }
 
         button {
@@ -59,63 +118,35 @@
             border-radius: 10px;
             cursor: pointer;
             margin: 20px;
-            animation: pulse 1.5s infinite;
+            transition: 0.3s;
         }
 
         button:hover {
             background: green;
             color: white;
+            transform: scale(1.1);
         }
 
+        footer {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        /* ANIMATION */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
             }
 
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.5);
-            }
-
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
+            button {
+                width: 80%;
             }
         }
     </style>
@@ -123,38 +154,77 @@
 
 <body>
 
+    <div class="watermark">Created by Venkat</div>
+
     <header>
-        <!-- College Logo -->
-        <img src="logo.jpg" class="logo" alt="College Logo">
-        <h1>Welcome to Kamaraj College Face Prep </h1>
-        <p>100% Placement Based on Talent</p>
+        <img src="logo.jpg" class="logo">
+        <h1>Kamaraj College Face Prep Campus</h1>
+        <p>100% Placement Based on Skills & Talent</p>
     </header>
 
-    <!-- College Image -->
-    <img src="download.jpg" class="college" alt="College Image">
+    <img src="face.jpg" class="college">
 
-    <div class="courses">
-        <h2>Courses Offered</h2>
-        <p>BCA (Java, Python, HTML, Data Structures)</p>
-        <p>BBA (Digital Marketing, Business Skills)</p>
+    <!-- GRID CONTENT -->
+    <div class="grid">
 
-        <h3>Programming Courses</h3>
-        <p>✔ Java</p>
-        <p>✔ Python</p>
-        <p>✔ HTML</p>
-        <p>✔ Python Data Structures</p>
-        <p>✔ Java Data Structures</p>
+        <div class="card">
+            <h2>Courses</h2>
+            <p>BCA - Java, Python, HTML</p>
+            <p>BBA - Digital Marketing</p>
+        </div>
+
+        <div class="card">
+            <h2>Student Info</h2>
+            <p>Name: Venkat</p>
+            <p>Interest: Java 💻</p>
+            <p>Goal: Software Developer 🚀</p>
+        </div>
+
+        <div class="card negative">
+            <h2 class="warning">⚠ Warning</h2>
+            <p>Fail → No Placement</p>
+            <p>Arrears → Job Risk</p>
+            <p>No Skills → No Career</p>
+        </div>
+
+        <div class="card positive">
+            <h2 class="success">✅ Success</h2>
+            <p>Skills → Job</p>
+            <p>Practice Daily</p>
+            <p>Projects → Placement</p>
+        </div>
+
     </div>
 
-    <div class="courses">
-        <h2 class="warning">If you FAIL or have ARREARS → NO JOB ❌</h2>
-        <h2 class="success">But if you have SKILLS → JOB GUARANTEED ✔</h2>
+    <!-- FACE PREP DETAILS -->
+    <div class="faceprep">
+        <h2>🏫 Face Prep Campus Training</h2>
+        <ul>
+            <li>✔ Aptitude & Logical Reasoning Training</li>
+            <li>✔ Technical Training (Java, Python, Web)</li>
+            <li>✔ Mock Interviews & HR Training</li>
+            <li>✔ Resume Building Sessions</li>
+            <li>✔ Real-Time Project Development</li>
+            <li>✔ Soft Skills & Communication</li>
+        </ul>
+
+        <h2>🏢 Campus Facilities</h2>
+        <ul>
+            <li>✔ Smart Classrooms</li>
+            <li>✔ Computer Labs</li>
+            <li>✔ Placement Cell</li>
+            <li>✔ Wi-Fi Campus</li>
+        </ul>
     </div>
 
     <h2>🎯 100% Placement Based on Talent</h2>
 
-    <!-- Register Button -->
-    <button onclick="register()">Click Here to Register</button>
+    <button onclick="register()">Register Now</button>
+
+    <footer>
+        <p>📞 Contact: 9876543210</p>
+        <p>© 2026 Kamaraj College | Designed by Venkat</p>
+    </footer>
 
     <script>
         function register() {
